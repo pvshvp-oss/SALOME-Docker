@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-docker build -t salome-9.9.0 .\
+docker build -t salome .\
+    && xhost +local:root \
     && docker run -ti --rm \
         -e DISPLAY=${DISPLAY} \
         --net=host \
@@ -8,4 +9,6 @@ docker build -t salome-9.9.0 .\
         --pid=host \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         --privileged=true \
-        salome-9.9.0
+        salome
+
+xhost -local:root
