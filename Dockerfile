@@ -10,5 +10,9 @@ RUN chmod 755 /opt/SALOME-9.9.0/env_launch.sh /opt/SALOME-9.9.0/salome /opt/SALO
 RUN ln -s /opt/SALOME-9.9.0/salome /usr/bin/salome
 RUN ln -s /opt/SALOME-9.9.0/mesa_salome /usr/bin/mesa_salome
 RUN apt install python3 libopengl0 libglu1 libfontconfig1 libsm6 dbus-x11 -y
+RUN DEBIAN_FRONTEND=noninteractive TZ="America/Chicago" apt install libglib2.0-dev libpangoft2-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libpango1.0-dev -y
+RUN apt install xterm netcat -y
+RUN apt install libegl1 -y
+WORKDIR /opt/SALOME-9.9.0
 
 CMD bash /opt/SALOME-9.9.0/env_launch.sh && mesa_salome && /bin/bash
