@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+mkdir -p ~/salome
+
 xhost +local:root \
     && docker run \
         --net=host \
@@ -7,6 +9,7 @@ xhost +local:root \
         --pid=host \
         --privileged=true \
         --volume /tmp/.X11-unix:/tmp/.X11-unix \
+        --volume ~/salome:/home/salome \
         --env DISPLAY=${DISPLAY} \
         --interactive \
         --tty \

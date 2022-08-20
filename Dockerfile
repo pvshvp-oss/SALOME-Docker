@@ -9,5 +9,5 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive TZ="America/Chicago" apt instal
 RUN chmod 755 /opt/SALOME-9.9.0/env_launch.sh /opt/SALOME-9.9.0/salome /opt/SALOME-9.9.0/mesa_salome
 RUN ln -s /opt/SALOME-9.9.0/salome /usr/bin/salome
 RUN ln -s /opt/SALOME-9.9.0/mesa_salome /usr/bin/mesa_salome
-WORKDIR /opt/SALOME-9.9.0
-CMD /usr/bin/bash /opt/SALOME-9.9.0/env_launch.sh && mesa_salome; /bin/bash
+WORKDIR /home/salome
+CMD { /usr/bin/bash /opt/SALOME-9.9.0/env_launch.sh && mesa_salome & }; /bin/bash
