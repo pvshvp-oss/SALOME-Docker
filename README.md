@@ -2,7 +2,7 @@
 
 A Docker Container to run SALOME (from https://www.salome-platform.org/).
 
-The docker image is uploaded at https://hub.docker.com/repository/docker/shivanandvp/salome
+The docker image is uploaded at https://hub.docker.com/r/shivanandvp/salome
 
 The `build.sh`, `run.sh`, and `build_and_run.sh` scripts are self explanatory. They build an image and run the container using the local `Dockerfile`.
 
