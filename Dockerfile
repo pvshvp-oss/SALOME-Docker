@@ -10,4 +10,6 @@ RUN chmod 755 /opt/SALOME-9.9.0/env_launch.sh /opt/SALOME-9.9.0/salome /opt/SALO
 RUN ln -s /opt/SALOME-9.9.0/salome /usr/bin/salome
 RUN ln -s /opt/SALOME-9.9.0/mesa_salome /usr/bin/mesa_salome
 WORKDIR /home/salome
-CMD { /usr/bin/bash /opt/SALOME-9.9.0/env_launch.sh && mesa_salome & }; /bin/bash
+SHELL ["/bin/bash", "-c"]
+CMD mesa_salome & \
+    . /opt/SALOME-9.9.0/env_launch.sh && /bin/bash
