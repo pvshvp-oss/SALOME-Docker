@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 RUN apt update && apt full-upgrade -y && apt install -y curl
 RUN curl --output /opt/SALOME-9.9.0.tar.gz https://files.salome-platform.org/Salome/Salome9.9.0/SALOME-9.9.0.tar.gz
-RUN tar -C /opt -xvf /opt/SALOME-9.9.0.tar.gz && rm /opt/SALOME-9.9.0.tar.gz
+RUN tar -C /opt -xf /opt/SALOME-9.9.0.tar.gz --totals && rm /opt/SALOME-9.9.0.tar.gz
 
 RUN apt update && DEBIAN_FRONTEND=noninteractive TZ="America/Chicago" apt install -y python3 libopengl0 libglu1 libfontconfig1 libsm6 dbus-x11 libglib2.0-dev libpangoft2-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libpango1.0-dev libegl1 xterm netcat
 
