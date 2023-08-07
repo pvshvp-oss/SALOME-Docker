@@ -14,7 +14,7 @@ To run this container while mounting a custom local directory `~/salome` (on you
 ```sh
 #!/usr/bin/env sh
 
-docker pull shivanandvp/salome:9.9.0
+docker pull shivanandvp/salome:latest
 mkdir -p ~/salome
 
 xhost +local:root \
@@ -29,7 +29,7 @@ xhost +local:root \
         --interactive \
         --tty \
         --rm \
-        shivanandvp/salome:9.9.0
+        shivanandvp/salome:latest
 
 xhost -local:root
 ```
