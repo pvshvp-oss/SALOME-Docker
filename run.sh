@@ -14,6 +14,7 @@ xhost +local:root \
         --interactive \
         --tty \
         --rm \
+        --name=SALOME \
         shivanandvp/salome:9.11.0
 
 xhost -local:root
