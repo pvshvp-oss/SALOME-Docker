@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-SALOME_DIRNAME="SALOME-9.11.0"
+SALOME_DIRNAME="SALOME-9.12.0"
 
 ls "$SALOME_DIRNAME.tar.gz" >/dev/null 2>&1
 if [[ $? -ne 0 ]]; then
@@ -14,7 +14,7 @@ COMPOSE_DOCKER_CLI_BUILD=1 \
 docker build \
     --network host \
     --platform linux/amd64 \
-    --tag shivanandvp/salome:9.11.0 \
+    --tag shivanandvp/salome:9.12.0 \
     --tag shivanandvp/salome:latest \
     . \
     "$@"
